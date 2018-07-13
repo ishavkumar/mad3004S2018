@@ -1,0 +1,79 @@
+import Foundation 
+
+print("Hello World")
+
+var greet = """
+Hello friend
+m good
+"""
+print (greet)
+
+var team = String()
+team = "Croatia"
+print(team)
+
+for i in team{
+    print(i)
+}
+
+var initial : Character = "J"
+team.append(initial)
+
+team.append("go go go")
+print(team)
+
+
+print("Length of team : ", team.count)
+
+print("Start Index of team: \(team[team.startIndex])")
+
+//print("End Index of Team: \(team[team.endIndex])")
+
+print("last character of team: \(team[team.index(before: team.endIndex)])")
+print("some character : \(team[team.index(after:team.startIndex)])")
+
+print("4th character : \(team[team.index(team.startIndex,offsetBy: 3)])")
+
+print("6th character from end: \(team[team.index(team.endIndex, offsetBy: -5)])")
+
+var idx = team.index(team.endIndex, offsetBy: -5)
+print("\(team[idx])")
+
+for index in greet.indices {
+    print("\(greet[index])",  terminator: "_")
+}
+
+for (index,value) in team.enumerated(){
+    print("Index: \(index) --- Value: \(value)")
+
+}
+
+
+team.insert("!" ,at: team.endIndex)
+
+print(team)
+
+team.insert(contentsOf: " win it..", at:  team.endIndex)
+
+var idx1  = team.index(of: "J") ??
+team.endIndex
+
+//print("idx1 : \(idx)" )
+
+ team.remove(at: idx1)
+
+ var idxG  = team.index(of: "G") ??
+team.endIndex
+
+team.removeSubrange(team.startIndex..<idxG)
+
+print(team)
+
+print(team.uppercased())
+
+var grade : String?
+grade = "A"
+let finalGrade = grade ?? "F"
+print("\(finalGrade)")
+    
+
